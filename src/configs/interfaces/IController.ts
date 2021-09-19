@@ -1,6 +1,6 @@
 import IDependencies from './IDependencies';
 interface IController {
-  (params: IParams, dependencies: IDependencies): Promise<IControllerResponse>;
+  (payloads: IPayload, dependencies: IDependencies): Promise<IControllerResponse>;
 }
 
 //might refactor later after response structure is well defined.
@@ -10,8 +10,11 @@ interface IControllerResponse {
   error?: any;
 }
 
-interface IParams {
-  ['queryParams']: any, ['urlParams']: any
+interface IPayload {
+  ['queryParams']?: any,
+  ['urlParams']: any,
+  ['body']: any,
+  ['headers']: any
 }
 
 export default IController;
