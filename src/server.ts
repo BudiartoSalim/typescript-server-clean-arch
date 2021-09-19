@@ -1,5 +1,5 @@
-import expressApp from "./frameworks/webserver/express/app";
 if (process.env.NODE_ENV !== 'production') { require('dotenv').config() };
+import expressApp from "./frameworks/webserver/express/app";
 
 class Server {
   static start(PORT: number) {
